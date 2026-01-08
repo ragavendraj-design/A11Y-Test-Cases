@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WCAG 1.1.1a Pass Example 6</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        background-color: #f0f0f0;
+        color: #333;
+        line-height: 1.6;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      canvas {
+        border: 1px solid #ddd;
+        background-color: #fff;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>WCAG 1.1.1a Pass Example 6</h1>
+    <canvas
+      id="logoCanvas"
+      width="300"
+      height="100"
+      role="img"
+      aria-label="Logo consisting of a hexagon icon and the text TechCorp Solutions"
+    >
+      Your browser does not support the HTML canvas tag.
+    </canvas>
+
+    <script>
+      const canvas = document.getElementById("logoCanvas");
+      if (canvas.getContext) {
+        const ctx = canvas.getContext("2d");
+
+        // 1. Draw a Hexagon (The Logo Icon)
+        ctx.beginPath();
+        ctx.moveTo(50, 20);
+        ctx.lineTo(80, 35);
+        ctx.lineTo(80, 65);
+        ctx.lineTo(50, 80);
+        ctx.lineTo(20, 65);
+        ctx.lineTo(20, 35);
+        ctx.closePath();
+
+        // Fill Styling
+        ctx.fillStyle = "#4F46E5"; // Indigo color
+        ctx.fill();
+
+        // 2. Add Text
+        ctx.font = "bold 24px Arial, sans-serif";
+        ctx.fillStyle = "#333";
+        ctx.fillText("TechCorp", 100, 58); // Position text next to shape
+
+        // 3. Add Subtitle
+        ctx.font = "12px Arial, sans-serif";
+        ctx.fillStyle = "#666";
+        ctx.fillText("Solutions", 100, 75);
+      }
+    </script>
+  </body>
+</html>
